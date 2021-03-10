@@ -12,14 +12,8 @@ window.onload = function () {
 
 function addWeb() {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    const port = chrome.tabs.connect({
-      tabId: tabs[0].id,
-      connectInfo: { name: "toContent" },
-    });
-
+    const port = chrome.tabs.connect(tabs[0].id);
     port.postMessage({ thisTitle: tabs[0].title, thisUrl: tabs[0].url });
-    getWeb()
-
   });
 }
 
@@ -31,7 +25,11 @@ function getWeb() {
       const newEle = document.createElement("a");
       newEle.textContent = key;
       newEle.href = items[key];
+      newEle.target = "_blank";
       linkCont.appendChild(newEle);
+      const sepEle = document.createElement('p');
+      sepEle.textContent = "----------";
+      linkCont.appendChild(sepEle);
     }
   });
 }
