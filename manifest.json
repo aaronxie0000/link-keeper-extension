@@ -1,5 +1,5 @@
 {
-    "name": "Learn Chrome Ext",
+    "name": "Link-Keeper",
     "version": "0.0.1",
     "manifest_version": 3,
     "background":{
@@ -12,6 +12,6 @@
     "permissions": ["storage", "tabs"],
     "action": {
         "default_popup": "popup.html",
-        "default_name": "Learning Time"
+        "default_name": "Link-Keeper"
     }
 }

@@ -23,13 +23,11 @@ function getWeb() {
 
     for (key in items) {
       const newEle = document.createElement("a");
+      newEle.classList.add("entry");
       newEle.textContent = key;
       newEle.href = items[key];
       newEle.target = "_blank";
       linkCont.appendChild(newEle);
-      const sepEle = document.createElement('p');
-      sepEle.textContent = "----------";
-      linkCont.appendChild(sepEle);
     }
   });
 }
